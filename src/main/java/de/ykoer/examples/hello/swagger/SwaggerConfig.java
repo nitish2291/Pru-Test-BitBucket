@@ -47,7 +47,7 @@ public class SwaggerConfig {
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("de.ykoer.examples.hello"))
+                .apis(RequestHandlerSelectors.basePackage("de.ykoer.examples.hello.controller"))
                 .paths(PathSelectors.regex("/.*"))
                 .build()
                 .apiInfo(getApiInfo())
