@@ -25,11 +25,11 @@ security:
 
 
 swagger:
-    title: Restricted Party Screening Service
-    description: The REST API documentation for the Restricted Party Screening Service
+    title: Hello World Service
+    description: The REST API documentation for the Hello World Service
     version: 1.0.0
     termsOfServiceUrl:
-    contactName: Application Delivery Services
+    contactName: Yusuf Kör
     contactUrl: https://github.com/ykoer
     contactEmail: yusuf.koer@googlemail.com
     license:
