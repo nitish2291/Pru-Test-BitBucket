@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Create HelloWorld Spring Boot docker image') {
+            steps {
+                echo 'Hello World'
+                git credentialsId: 'github-private-key', url: 'git@github.com:nitish2291/Pru-Test-BitBucket.git'
+                sh '''
+                docker build --build-arg url=https://github.com/nitish2291/Pru-Test-BitBucket.git --build-arg project=Pru-Test-BitBucket --build-arg artifactid=spring-boot-helloworld --build-arg version=0.0.1-SNAPSHOT -t helloworld/spring-boot - < Dockerfile
+                '''
+            }
+        }
+        
+        stage('Run the Docker Image') {
+            steps {
+                
+                sh '''
+                
+                winpty docker run -it -p8080:8080 helloworld/spring-boot || true
+                
+                '''
+                
+            }
+        }
+    }
+}
